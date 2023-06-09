@@ -12,3 +12,27 @@ then, add the new plugin to the list of installed plugin :
 # Via env var
 export KONG_PLUGINS=$KONG_PLUGINS,whitelist-url
 ```
+
+
+## Module configuration
+
+The modules allow the user to configure the following options, that are sets into the ``schema.lua`` file :
+
+ * `patterns` : An array of strings that represents valid lua matching patterns
+ * `status` : A number that will be set as the HTTP status codes.
+ * `message` : The content of the body that will be sended to the client.
+ * `content_type` : The value of the `Content-Type` header that will be sended.
+
+
+
+## Usages
+
+The list of strings to be checked by the module must represent match patterns compatible with lua.
+
+Special characters must be escaped with the % sign.
+
+Examples :
+
+```
+"AAA-BBB" => "AAA%-BBB"
+```
