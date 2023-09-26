@@ -1,4 +1,3 @@
--- Copyright (C) Kong Inc.
 local kong = kong
 local kong_meta = require "kong.meta"
 
